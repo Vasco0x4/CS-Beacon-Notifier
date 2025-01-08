@@ -3,6 +3,10 @@
 # Cobalt Strike Beacon Notifier
 A Cobalt Strike Beacon Notifier Via Telegram.
 
+<p align="left">
+    <img src="https://github.com/user-attachments/assets/f936dacf-00f2-41e2-8b20-ea05cc421703" alt="Image" width="300" />
+</p>
+
 ## Setup
 ```console
 git clone https://github.com/vasco0x4/CS-Beacon-Notifier.git
@@ -24,8 +28,6 @@ def telegram_bot_msgSender(msg):
 <p align="center">
     <img src="https://github.com/lynxbinz/CS-Beacon-Notifier/blob/main/images/load-cna-script.png" alt="Image" width="600" />
 </p>
-
-
 
 ## Tested On
 * Cobalt Strike 4.9.1
