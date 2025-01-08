@@ -1,0 +1,41 @@
+# CS Beacon Notifier
+# A Cobalt Strike Beacon Notifier Via Telegram Bot
+# Author @lynxbinz / Vasco0x4
+
+# Path to Python script
+$pyScript = "pyScript.py";
+
+on beacon_initial {
+    # Collect beacon information
+    $userName = beacon_info($1, "user");
+    $computerName = beacon_info($1, "computer");
+    $operatingSystem = beacon_info($1, "os");
+    $architecture = beacon_info($1, "arch");
+    $buildVersion = beacon_info($1, "build");
+    $inIP = beacon_info($1, "internal");
+    $exIP = beacon_info($1, "external");
+    $processName = beacon_info($1, "process");
+    $timestamp = formatDate("yyyy-MM-dd HH:mm:ss");
+
+    # Format notification message
+    $notification = "🎯 New Beacon Alert | $timestamp
+
+🔍 System Details:
+------------------------
+👤 User: $userName
+💻 Hostname: $computerName
+🖥️ OS: $operatingSystem $architecture
+🏗️ Build: $buildVersion
+⚙️ Process: $processName
+
+🌐 Network:
+------------------------
+🏠 Internal IP: $inIP
+🌍 External IP: $exIP
+------------------------";
+
+    # Execute Python script with notification
+    @command = @('python3', $pyScript, $notification);
+    exec(@command);
+}
+
