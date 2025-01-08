@@ -30,6 +30,6 @@ def telegram_bot_msgSender(msg):
 </p>
 
 ## Tested On
-* Cobalt Strike 4.9.1
+* Cobalt Strike 4.5-4.9.1
 
 
